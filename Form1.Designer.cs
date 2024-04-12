@@ -36,7 +36,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblNumber = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lblGuess = new System.Windows.Forms.Label();
+            this.lblExpectedNumber = new System.Windows.Forms.Label();
             this.btnShow = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnDone = new System.Windows.Forms.Button();
@@ -50,7 +50,7 @@
             this.btnSeven = new System.Windows.Forms.Button();
             this.btnSix = new System.Windows.Forms.Button();
             this.btnNine = new System.Windows.Forms.Button();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.llStats = new System.Windows.Forms.LinkLabel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -78,14 +78,12 @@
             "5",
             "6",
             "7",
-            "8",
-            "9",
-            "10"});
+            "8"});
             this.cbDigits.Location = new System.Drawing.Point(651, 22);
             this.cbDigits.Name = "cbDigits";
             this.cbDigits.Size = new System.Drawing.Size(121, 24);
             this.cbDigits.TabIndex = 1;
-            this.cbDigits.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cbDigits.SelectedIndexChanged += new System.EventHandler(this.cbDigits_SelectedIndexChanged);
             // 
             // lblDigit
             // 
@@ -93,9 +91,9 @@
             this.lblDigit.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDigit.Location = new System.Drawing.Point(548, 14);
             this.lblDigit.Name = "lblDigit";
-            this.lblDigit.Size = new System.Drawing.Size(80, 32);
+            this.lblDigit.Size = new System.Drawing.Size(94, 32);
             this.lblDigit.TabIndex = 2;
-            this.lblDigit.Text = "Digit:";
+            this.lblDigit.Text = "Digits:";
             // 
             // groupBox1
             // 
@@ -118,25 +116,26 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.lblGuess);
+            this.groupBox2.Controls.Add(this.lblExpectedNumber);
             this.groupBox2.Location = new System.Drawing.Point(156, 205);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(429, 109);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             // 
-            // lblGuess
+            // lblExpectedNumber
             // 
-            this.lblGuess.AutoSize = true;
-            this.lblGuess.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGuess.Location = new System.Drawing.Point(161, 43);
-            this.lblGuess.Name = "lblGuess";
-            this.lblGuess.Size = new System.Drawing.Size(0, 32);
-            this.lblGuess.TabIndex = 6;
+            this.lblExpectedNumber.AutoSize = true;
+            this.lblExpectedNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExpectedNumber.Location = new System.Drawing.Point(177, 44);
+            this.lblExpectedNumber.Name = "lblExpectedNumber";
+            this.lblExpectedNumber.Size = new System.Drawing.Size(30, 32);
+            this.lblExpectedNumber.TabIndex = 6;
+            this.lblExpectedNumber.Text = "?";
             // 
             // btnShow
             // 
-            this.btnShow.Location = new System.Drawing.Point(156, 532);
+            this.btnShow.Location = new System.Drawing.Point(177, 516);
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(75, 61);
             this.btnShow.TabIndex = 5;
@@ -146,8 +145,8 @@
             // 
             // btnClear
             // 
-            this.btnClear.BackColor = System.Drawing.Color.Blue;
-            this.btnClear.Location = new System.Drawing.Point(448, 477);
+            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnClear.Location = new System.Drawing.Point(474, 477);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(111, 49);
             this.btnClear.TabIndex = 6;
@@ -158,7 +157,7 @@
             // 
             // btnDone
             // 
-            this.btnDone.Location = new System.Drawing.Point(461, 532);
+            this.btnDone.Location = new System.Drawing.Point(358, 516);
             this.btnDone.Name = "btnDone";
             this.btnDone.Size = new System.Drawing.Size(75, 61);
             this.btnDone.TabIndex = 7;
@@ -168,8 +167,8 @@
             // 
             // btnZero
             // 
-            this.btnZero.BackColor = System.Drawing.Color.Blue;
-            this.btnZero.Location = new System.Drawing.Point(156, 419);
+            this.btnZero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnZero.Location = new System.Drawing.Point(177, 421);
             this.btnZero.Name = "btnZero";
             this.btnZero.Size = new System.Drawing.Size(54, 50);
             this.btnZero.TabIndex = 8;
@@ -181,8 +180,8 @@
             // 
             // btnFour
             // 
-            this.btnFour.BackColor = System.Drawing.Color.Blue;
-            this.btnFour.Location = new System.Drawing.Point(522, 421);
+            this.btnFour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnFour.Location = new System.Drawing.Point(531, 421);
             this.btnFour.Name = "btnFour";
             this.btnFour.Size = new System.Drawing.Size(54, 50);
             this.btnFour.TabIndex = 9;
@@ -194,8 +193,8 @@
             // 
             // btnThree
             // 
-            this.btnThree.BackColor = System.Drawing.Color.Blue;
-            this.btnThree.Location = new System.Drawing.Point(434, 419);
+            this.btnThree.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnThree.Location = new System.Drawing.Point(443, 421);
             this.btnThree.Name = "btnThree";
             this.btnThree.Size = new System.Drawing.Size(54, 50);
             this.btnThree.TabIndex = 10;
@@ -207,8 +206,8 @@
             // 
             // btnTwo
             // 
-            this.btnTwo.BackColor = System.Drawing.Color.Blue;
-            this.btnTwo.Location = new System.Drawing.Point(353, 419);
+            this.btnTwo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnTwo.Location = new System.Drawing.Point(358, 419);
             this.btnTwo.Name = "btnTwo";
             this.btnTwo.Size = new System.Drawing.Size(54, 50);
             this.btnTwo.TabIndex = 11;
@@ -220,8 +219,8 @@
             // 
             // btnOne
             // 
-            this.btnOne.BackColor = System.Drawing.Color.Blue;
-            this.btnOne.Location = new System.Drawing.Point(248, 419);
+            this.btnOne.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnOne.Location = new System.Drawing.Point(259, 421);
             this.btnOne.Name = "btnOne";
             this.btnOne.Size = new System.Drawing.Size(54, 50);
             this.btnOne.TabIndex = 12;
@@ -233,8 +232,8 @@
             // 
             // btnFive
             // 
-            this.btnFive.BackColor = System.Drawing.Color.Blue;
-            this.btnFive.Location = new System.Drawing.Point(156, 337);
+            this.btnFive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnFive.Location = new System.Drawing.Point(177, 337);
             this.btnFive.Name = "btnFive";
             this.btnFive.Size = new System.Drawing.Size(54, 50);
             this.btnFive.TabIndex = 13;
@@ -246,8 +245,8 @@
             // 
             // btnEight
             // 
-            this.btnEight.BackColor = System.Drawing.Color.Blue;
-            this.btnEight.Location = new System.Drawing.Point(434, 337);
+            this.btnEight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnEight.Location = new System.Drawing.Point(443, 337);
             this.btnEight.Name = "btnEight";
             this.btnEight.Size = new System.Drawing.Size(54, 50);
             this.btnEight.TabIndex = 14;
@@ -259,8 +258,8 @@
             // 
             // btnSeven
             // 
-            this.btnSeven.BackColor = System.Drawing.Color.Blue;
-            this.btnSeven.Location = new System.Drawing.Point(353, 337);
+            this.btnSeven.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnSeven.Location = new System.Drawing.Point(358, 337);
             this.btnSeven.Name = "btnSeven";
             this.btnSeven.Size = new System.Drawing.Size(54, 50);
             this.btnSeven.TabIndex = 15;
@@ -272,8 +271,8 @@
             // 
             // btnSix
             // 
-            this.btnSix.BackColor = System.Drawing.Color.Blue;
-            this.btnSix.Location = new System.Drawing.Point(248, 337);
+            this.btnSix.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnSix.Location = new System.Drawing.Point(259, 337);
             this.btnSix.Name = "btnSix";
             this.btnSix.Size = new System.Drawing.Size(54, 50);
             this.btnSix.TabIndex = 16;
@@ -285,8 +284,8 @@
             // 
             // btnNine
             // 
-            this.btnNine.BackColor = System.Drawing.Color.Blue;
-            this.btnNine.Location = new System.Drawing.Point(522, 337);
+            this.btnNine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnNine.Location = new System.Drawing.Point(531, 337);
             this.btnNine.Name = "btnNine";
             this.btnNine.Size = new System.Drawing.Size(54, 50);
             this.btnNine.TabIndex = 17;
@@ -296,24 +295,25 @@
             this.btnNine.Visible = false;
             this.btnNine.Click += new System.EventHandler(this.button_Click);
             // 
-            // linkLabel1
+            // llStats
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(333, 14);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(79, 32);
-            this.linkLabel1.TabIndex = 18;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Stats";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.llStats.AutoSize = true;
+            this.llStats.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.llStats.LinkColor = System.Drawing.Color.Teal;
+            this.llStats.Location = new System.Drawing.Point(333, 14);
+            this.llStats.Name = "llStats";
+            this.llStats.Size = new System.Drawing.Size(79, 32);
+            this.llStats.TabIndex = 18;
+            this.llStats.TabStop = true;
+            this.llStats.Text = "Stats";
+            this.llStats.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llStats_LinkClicked);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 594);
-            this.Controls.Add(this.linkLabel1);
+            this.ClientSize = new System.Drawing.Size(800, 615);
+            this.Controls.Add(this.llStats);
             this.Controls.Add(this.btnNine);
             this.Controls.Add(this.btnSix);
             this.Controls.Add(this.btnSeven);
@@ -366,8 +366,8 @@
         private System.Windows.Forms.Button btnSeven;
         private System.Windows.Forms.Button btnSix;
         private System.Windows.Forms.Button btnNine;
-        private System.Windows.Forms.Label lblGuess;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Label lblExpectedNumber;
+        private System.Windows.Forms.LinkLabel llStats;
     }
 }
 

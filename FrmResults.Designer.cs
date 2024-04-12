@@ -70,7 +70,7 @@
             // 
             this.lblRightAnswers.AutoSize = true;
             this.lblRightAnswers.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRightAnswers.Location = new System.Drawing.Point(213, 173);
+            this.lblRightAnswers.Location = new System.Drawing.Point(239, 173);
             this.lblRightAnswers.Name = "lblRightAnswers";
             this.lblRightAnswers.Size = new System.Drawing.Size(30, 32);
             this.lblRightAnswers.TabIndex = 3;
@@ -88,7 +88,7 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(132, 371);
+            this.btnBack.Location = new System.Drawing.Point(105, 341);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(164, 63);
             this.btnBack.TabIndex = 5;
@@ -109,7 +109,6 @@
             this.Controls.Add(this.lblResult);
             this.Name = "FrmResults";
             this.Text = "FrmResults";
-            this.Load += new System.EventHandler(this.FrmResults_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
