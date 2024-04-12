@@ -22,7 +22,6 @@ namespace Number_Blink_Game
         {
             cbDigits.SelectedIndex = 0;
             lblTime.Text = "2 S";
-            lblExpectedNumber.Text = "";
         }
         private void RandomNumber(int min , int max)
         {
@@ -54,6 +53,7 @@ namespace Number_Blink_Game
         {
             Counter = GetCounter(cbDigits.SelectedIndex);
             lblTime.Text = Counter + " S";
+            lblNumber.Text = lblExpectedNumber.Text = "?";
             timer1.Start();
             RandomNumber();
         }
@@ -72,6 +72,7 @@ namespace Number_Blink_Game
                 timer1.Stop();
                 HiddenNumber = lblNumber.Text;
                 lblNumber.Text = "?";
+                lblExpectedNumber.Text = "";
                 lblTime.Text = Counter + " S";
                 ShowButtons(true);
             }
@@ -81,20 +82,20 @@ namespace Number_Blink_Game
             lblNumber.Text = HiddenNumber;
             if (HiddenNumber == lblExpectedNumber.Text)
             {
-                groupBox1.BackColor = groupBox2.BackColor = Color.Green;
+                gbNumber.BackColor = gbExpectedNumber.BackColor = Color.DarkCyan;
                 NumberOfRightAnswers++;
                 MessageBox.Show("True Answer", "True",MessageBoxButtons.OK);
             }
             else
             {
-                groupBox1.BackColor = groupBox2.BackColor = Color.Red;
+                gbNumber.BackColor = gbExpectedNumber.BackColor = Color.Red;
                 NumberOfWrongAnswers++;
                 MessageBox.Show("Wrong Answer", "Wrong", MessageBoxButtons.OK);
             }
             btnShow.Enabled = true;
             ShowButtons(false);
             lblNumber.Text = lblExpectedNumber.Text = "";
-            groupBox1.BackColor = groupBox2.BackColor = Color.Transparent;
+            gbNumber.BackColor = gbExpectedNumber.BackColor = Color.Transparent;
         }
         private void ShowButtons(bool isVisible)
         {

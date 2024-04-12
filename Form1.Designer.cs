@@ -33,9 +33,9 @@
             this.lblTime = new System.Windows.Forms.Label();
             this.cbDigits = new System.Windows.Forms.ComboBox();
             this.lblDigit = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbNumber = new System.Windows.Forms.GroupBox();
             this.lblNumber = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gbExpectedNumber = new System.Windows.Forms.GroupBox();
             this.lblExpectedNumber = new System.Windows.Forms.Label();
             this.btnShow = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
@@ -51,8 +51,8 @@
             this.btnSix = new System.Windows.Forms.Button();
             this.btnNine = new System.Windows.Forms.Button();
             this.llStats = new System.Windows.Forms.LinkLabel();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.gbNumber.SuspendLayout();
+            this.gbExpectedNumber.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -95,14 +95,14 @@
             this.lblDigit.TabIndex = 2;
             this.lblDigit.Text = "Digits:";
             // 
-            // groupBox1
+            // gbNumber
             // 
-            this.groupBox1.Controls.Add(this.lblNumber);
-            this.groupBox1.Location = new System.Drawing.Point(156, 70);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(429, 100);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
+            this.gbNumber.Controls.Add(this.lblNumber);
+            this.gbNumber.Location = new System.Drawing.Point(156, 70);
+            this.gbNumber.Name = "gbNumber";
+            this.gbNumber.Size = new System.Drawing.Size(429, 100);
+            this.gbNumber.TabIndex = 3;
+            this.gbNumber.TabStop = false;
             // 
             // lblNumber
             // 
@@ -114,14 +114,14 @@
             this.lblNumber.TabIndex = 5;
             this.lblNumber.Text = "?";
             // 
-            // groupBox2
+            // gbExpectedNumber
             // 
-            this.groupBox2.Controls.Add(this.lblExpectedNumber);
-            this.groupBox2.Location = new System.Drawing.Point(156, 205);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(429, 109);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
+            this.gbExpectedNumber.Controls.Add(this.lblExpectedNumber);
+            this.gbExpectedNumber.Location = new System.Drawing.Point(156, 205);
+            this.gbExpectedNumber.Name = "gbExpectedNumber";
+            this.gbExpectedNumber.Size = new System.Drawing.Size(429, 109);
+            this.gbExpectedNumber.TabIndex = 4;
+            this.gbExpectedNumber.TabStop = false;
             // 
             // lblExpectedNumber
             // 
@@ -135,9 +135,9 @@
             // 
             // btnShow
             // 
-            this.btnShow.Location = new System.Drawing.Point(177, 516);
+            this.btnShow.Location = new System.Drawing.Point(177, 529);
             this.btnShow.Name = "btnShow";
-            this.btnShow.Size = new System.Drawing.Size(75, 61);
+            this.btnShow.Size = new System.Drawing.Size(119, 61);
             this.btnShow.TabIndex = 5;
             this.btnShow.Text = "Show";
             this.btnShow.UseVisualStyleBackColor = true;
@@ -146,7 +146,8 @@
             // btnClear
             // 
             this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnClear.Location = new System.Drawing.Point(474, 477);
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Location = new System.Drawing.Point(474, 496);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(111, 49);
             this.btnClear.TabIndex = 6;
@@ -157,9 +158,9 @@
             // 
             // btnDone
             // 
-            this.btnDone.Location = new System.Drawing.Point(358, 516);
+            this.btnDone.Location = new System.Drawing.Point(339, 529);
             this.btnDone.Name = "btnDone";
-            this.btnDone.Size = new System.Drawing.Size(75, 61);
+            this.btnDone.Size = new System.Drawing.Size(119, 61);
             this.btnDone.TabIndex = 7;
             this.btnDone.Text = "Done";
             this.btnDone.UseVisualStyleBackColor = true;
@@ -168,6 +169,7 @@
             // btnZero
             // 
             this.btnZero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnZero.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnZero.Location = new System.Drawing.Point(177, 421);
             this.btnZero.Name = "btnZero";
             this.btnZero.Size = new System.Drawing.Size(54, 50);
@@ -181,6 +183,7 @@
             // btnFour
             // 
             this.btnFour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnFour.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFour.Location = new System.Drawing.Point(531, 421);
             this.btnFour.Name = "btnFour";
             this.btnFour.Size = new System.Drawing.Size(54, 50);
@@ -194,6 +197,7 @@
             // btnThree
             // 
             this.btnThree.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnThree.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThree.Location = new System.Drawing.Point(443, 421);
             this.btnThree.Name = "btnThree";
             this.btnThree.Size = new System.Drawing.Size(54, 50);
@@ -207,6 +211,7 @@
             // btnTwo
             // 
             this.btnTwo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnTwo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTwo.Location = new System.Drawing.Point(358, 419);
             this.btnTwo.Name = "btnTwo";
             this.btnTwo.Size = new System.Drawing.Size(54, 50);
@@ -220,6 +225,7 @@
             // btnOne
             // 
             this.btnOne.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnOne.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOne.Location = new System.Drawing.Point(259, 421);
             this.btnOne.Name = "btnOne";
             this.btnOne.Size = new System.Drawing.Size(54, 50);
@@ -233,6 +239,7 @@
             // btnFive
             // 
             this.btnFive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnFive.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFive.Location = new System.Drawing.Point(177, 337);
             this.btnFive.Name = "btnFive";
             this.btnFive.Size = new System.Drawing.Size(54, 50);
@@ -246,6 +253,7 @@
             // btnEight
             // 
             this.btnEight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnEight.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEight.Location = new System.Drawing.Point(443, 337);
             this.btnEight.Name = "btnEight";
             this.btnEight.Size = new System.Drawing.Size(54, 50);
@@ -259,6 +267,7 @@
             // btnSeven
             // 
             this.btnSeven.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnSeven.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeven.Location = new System.Drawing.Point(358, 337);
             this.btnSeven.Name = "btnSeven";
             this.btnSeven.Size = new System.Drawing.Size(54, 50);
@@ -272,6 +281,7 @@
             // btnSix
             // 
             this.btnSix.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnSix.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSix.Location = new System.Drawing.Point(259, 337);
             this.btnSix.Name = "btnSix";
             this.btnSix.Size = new System.Drawing.Size(54, 50);
@@ -285,6 +295,7 @@
             // btnNine
             // 
             this.btnNine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnNine.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNine.Location = new System.Drawing.Point(531, 337);
             this.btnNine.Name = "btnNine";
             this.btnNine.Size = new System.Drawing.Size(54, 50);
@@ -327,18 +338,18 @@
             this.Controls.Add(this.btnDone);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnShow);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbExpectedNumber);
+            this.Controls.Add(this.gbNumber);
             this.Controls.Add(this.lblDigit);
             this.Controls.Add(this.cbDigits);
             this.Controls.Add(this.lblTime);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.gbNumber.ResumeLayout(false);
+            this.gbNumber.PerformLayout();
+            this.gbExpectedNumber.ResumeLayout(false);
+            this.gbExpectedNumber.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -350,9 +361,9 @@
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.ComboBox cbDigits;
         private System.Windows.Forms.Label lblDigit;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbNumber;
         private System.Windows.Forms.Label lblNumber;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gbExpectedNumber;
         private System.Windows.Forms.Button btnShow;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnDone;
